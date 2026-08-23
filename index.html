@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rachel Beecham — Tech Operations &amp; AI Enablement</title>
+<meta name="description" content="Operations professional building practical AI-enabled software. Tech operations, workflow automation, and business systems.">
+
+<meta property="og:title" content="Rachel Beecham — Tech Operations &amp; AI Enablement">
+<meta property="og:description" content="Operations professional building practical AI-enabled software.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rachelbeecham.dev">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
+
+<style>
+  :root{
+    --ink:#1E1B2E;
+    --ink-soft:#4A4358;
+    --ink-faint:#7A7189;
+    --cream:#FFF8F0;
+    --paper:#FFFFFF;
+    --coral:#FF5A36;
+    --mustard:#FFC145;
+    --mint:#A8E6CF;
+    --rule:#E8D9C8;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:clamp(1.75rem,5vw,3.5rem) clamp(1.1rem,4vw,2rem) 4rem;
+    display:flex;
+    flex-direction:column;
+    gap:clamp(2.5rem,5vw,3.5rem);
+  }
+
+  a{color:var(--coral)}
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 88% 18%, #FFD9A8 0%, rgba(255,217,168,0) 46%),
+      radial-gradient(circle at 12% 88%, #FFC7B8 0%, rgba(255,199,184,0) 52%),
+      linear-gradient(135deg,#FFF1E2 0%,#FFE4D3 100%);
+    border:3px solid var(--ink);
+    border-radius:28px;
+    box-shadow:10px 10px 0 var(--ink);
+    padding:clamp(1.75rem,4.5vw,2.9rem);
+  }
+
+  .eyebrow{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--cream);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    padding:.4rem .9rem;
+    border-radius:999px;
+    margin-bottom:1.15rem;
+  }
+
+  h1{
+    font-size:clamp(2.4rem,7vw,3.6rem);
+    font-weight:900;
+    line-height:.98;
+    letter-spacing:-.035em;
+    margin:0 0 1rem;
+    text-wrap:balance;
+  }
+
+  h1 .hl{position:relative;display:inline-block;color:var(--coral);z-index:0}
+  h1 .hl::after{
+    content:"";
+    position:absolute;
+    left:-2px;right:-2px;bottom:.07em;
+    height:.19em;
+    background:var(--mustard);
+    border-radius:999px;
+    z-index:-1;
+  }
+
+  .lede{
+    font-size:clamp(1rem,2.4vw,1.12rem);
+    font-weight:500;
+    line-height:1.55;
+    color:var(--ink-soft);
+    max-width:34rem;
+    margin:0 0 1.75rem;
+  }
+
+  .actions{display:flex;flex-wrap:wrap;gap:.7rem}
+
+  .btn{
+    display:inline-block;
+    padding:.65rem 1.25rem;
+    border-radius:14px;
+    border:2px solid var(--ink);
+    font-weight:700;
+    font-size:.94rem;
+    text-decoration:none;
+    transition:transform .08s ease,box-shadow .08s ease;
+  }
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:4px 4px 0 var(--ink)}
+  .btn-ghost{background:rgba(255,255,255,.75);color:var(--ink)}
+  .btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+  .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+  /* ---------- Sections ---------- */
+
+  section{display:flex;flex-direction:column;gap:1.1rem}
+
+  .label{
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--coral);
+    margin:0;
+  }
+
+  h2{
+    font-size:clamp(1.6rem,4vw,2rem);
+    font-weight:800;
+    letter-spacing:-.028em;
+    line-height:1.15;
+    margin:0;
+    text-wrap:balance;
+  }
+
+  p{margin:0;max-width:38rem}
+  .muted{color:var(--ink-soft)}
+
+  /* ---------- Project card ---------- */
+
+  .project{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:22px;
+    box-shadow:6px 6px 0 var(--ink);
+    overflow:hidden;
+  }
+
+  .project-body{
+    padding:clamp(1.25rem,3.5vw,1.9rem);
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+
+  .project h3{
+    font-size:clamp(1.3rem,3.2vw,1.6rem);
+    font-weight:800;
+    letter-spacing:-.02em;
+    margin:0;
+  }
+
+  .stack{display:flex;flex-wrap:wrap;gap:.4rem}
+  .chip{
+    font-size:.76rem;
+    font-weight:700;
+    padding:.24rem .7rem;
+    border-radius:999px;
+    border:2px solid var(--ink);
+    background:var(--mustard);
+    color:var(--ink);
+  }
+
+  .project ul{
+    margin:0;
+    padding-left:1.15rem;
+    display:flex;
+    flex-direction:column;
+    gap:.45rem;
+    color:var(--ink-soft);
+    font-size:.97rem;
+  }
+  .project ul strong{color:var(--ink)}
+
+  .shot{
+    display:block;
+    width:100%;
+    height:auto;
+    border-top:3px solid var(--ink);
+    background:var(--cream);
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skill-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:.9rem;
+  }
+
+  .skill-card{
+    background:var(--paper);
+    border:2px solid var(--ink);
+    border-radius:16px;
+    padding:1rem 1.15rem;
+    display:flex;
+    flex-direction:column;
+    gap:.35rem;
+  }
+  .skill-card h3{
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0;
+  }
+  .skill-card p{font-size:.93rem;color:var(--ink-soft)}
+
+  /* ---------- Background ---------- */
+
+  .timeline{
+    display:flex;
+    flex-direction:column;
+    gap:.1rem;
+    border-left:3px solid var(--ink);
+    padding-left:1.15rem;
+  }
+  .role{padding:.55rem 0}
+  .role .who{font-weight:700;font-size:.98rem}
+  .role .when{font-size:.85rem;color:var(--ink-faint);font-weight:600}
+  .role .what{font-size:.93rem;color:var(--ink-soft)}
+
+  /* ---------- Contact ---------- */
+
+  .contact{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:22px;
+    box-shadow:6px 6px 0 var(--mustard);
+    padding:clamp(1.4rem,4vw,2rem);
+    display:flex;
+    flex-direction:column;
+    gap:1.1rem;
+  }
+
+  footer{
+    border-top:2px solid var(--rule);
+    padding-top:1.2rem;
+    font-size:.85rem;
+    color:var(--ink-faint);
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    justify-content:space-between;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Tech Operations &middot; AI Enablement</div>
+    <h1>I make messy business processes <span class="hl">run themselves.</span></h1>
+    <p class="lede">
+      I spent years running operations — inventory, workflows, customer experience, a team.
+      Now I build software for the problems I used to solve by hand.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#work">See the work</a>
+      <a class="btn btn-ghost" href="resume.pdf" download>Download résumé</a>
+      <a class="btn btn-ghost" href="mailto:Contact@RachelBeecham.dev">Get in touch</a>
+    </div>
+  </header>
+
+  <section id="work">
+    <div>
+      <p class="label">Selected work</p>
+      <h2>AI Customer Inquiry Organizer</h2>
+    </div>
+
+    <div class="project">
+      <div class="project-body">
+        <h3>Messy inbox in. Real work out.</h3>
+        <div class="stack">
+          <span class="chip">Python</span>
+          <span class="chip">Streamlit</span>
+          <span class="chip">SQLite</span>
+          <span class="chip">LLM API</span>
+        </div>
+        <p class="muted">
+          Customer messages arrive unstructured — different wording, tone, and detail every
+          time. Someone has to read each one, work out what the customer needs, judge how
+          urgent it is, and decide what happens next, before any real work starts.
+        </p>
+        <p class="muted">
+          This tool does that first pass: it sorts the message, ranks its urgency, routes it
+          to a department, and drafts a reply — then hands the whole thing to a person for a
+          yes or no.
+        </p>
+        <ul>
+          <li><strong>The AI drafts, a human decides.</strong> Every field is editable and nothing
+          is final until someone approves it. The model is explicitly barred from promising
+          refunds, replacements, or delivery dates — those are business decisions, not
+          classification tasks.</li>
+          <li><strong>Model output is never trusted directly.</strong> A validation layer checks
+          every field against approved values before anything is stored, so an unexpected
+          response becomes a safe default rather than a bad record.</li>
+          <li><strong>The AI provider is configuration, not code.</strong> Swapping the underlying
+          model is an environment variable, not a rewrite.</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://ai-customer-inquiry-organizer-2enfu6gjg65jheetpfu3ty.streamlit.app/" target="_blank" rel="noopener">Try it live</a>
+          <a class="btn btn-ghost" href="https://github.com/rbeecham1076/ai-customer-inquiry-organizer" target="_blank" rel="noopener">View the code</a>
+        </div>
+      </div>
+      <img class="shot" src="project-screenshot.png"
+           alt="The AI Customer Inquiry Organizer showing a customer message analyzed into category, priority, sentiment, order number, routing, and a draft reply, all editable before approval."
+           loading="lazy" width="1600" height="1243">
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <p class="label">What I bring</p>
+      <h2>Operations experience, now with code behind it.</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3>Build</h3>
+        <p>Python, JavaScript, TypeScript, SQL / SQLite, Git &amp; GitHub, LLM API integration, prompt design.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Operate</h3>
+        <p>Workflow automation, process improvement, systems implementation, operational documentation.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Coordinate</h3>
+        <p>Cross-functional coordination, stakeholder communication, customer experience, intake and access workflows.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <p class="label">Background</p>
+      <h2>Where this comes from.</h2>
+    </div>
+    <div class="timeline">
+      <div class="role">
+        <div class="who">Sunnie Ray Digitals — Business Operations Lead / Owner</div>
+        <div class="when">2024 – Present</div>
+        <div class="what">Sole operator across systems, workflows, delivery, and customer experience. Cut turnaround time 30–40% by consolidating repeatable work into reusable templates and standard processes.</div>
+      </div>
+      <div class="role">
+        <div class="who">Midwest Steel — Operations Support / Site Administration</div>
+        <div class="when">2024 – 2025</div>
+        <div class="what">Coordinated documentation, logistics, vendor communication, and expense systems across multiple active construction sites. Improved onboarding efficiency 25%.</div>
+      </div>
+      <div class="role">
+        <div class="who">Dr. Chet Tharpe — Administrative Assistant (Remote)</div>
+        <div class="when">2020 – 2022</div>
+        <div class="what">Managed multi-state licensing records, renewals, and documentation workflows; cut processing delays through disciplined tracking of every active filing.</div>
+      </div>
+      <div class="role">
+        <div class="who">AJ Boutique — Founder &amp; Business Operations Officer</div>
+        <div class="when">2016 – 2021</div>
+        <div class="what">Generated more than $500K in first-year sales across online and retail. Grew a 15,000-member customer community and built a team of six.</div>
+      </div>
+    </div>
+    <p class="muted">
+      Currently completing a B.S. in Computer Science — Business &amp; AI at Maestro College
+      (4.0 GPA), with an embedded A.A.S. in AI Software Engineering.
+    </p>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <p class="label">Open to</p>
+        <h2>AI operations, workflow automation, technical implementation.</h2>
+      </div>
+      <p class="muted">
+        Remote roles where operations knowledge and hands-on building are both useful.
+        If that sounds like your team, I'd like to hear about it.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:Contact@RachelBeecham.dev">Contact@RachelBeecham.dev</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rachel-beecham/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/rbeecham1076" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="resume.pdf" download>Résumé (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Rachel Beecham &middot; Built by hand, no site builder.</span>
+    <span>rachelbeecham.dev</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
